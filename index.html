@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhaar (उधार) — Offline-First Loan Management & Servicing Engine</title>
+  <meta name="description" content="Dhaar is an enterprise-grade, 100% offline-first loan origination (LOS), loan servicing (LMS), and debt collection suite for microfinance, lenders, and credit managers.">
+  <meta name="keywords" content="loan management app, offline loan servicing, microfinance software, loan origination system, LMS, LOS, debt recovery, loan book, offline SQLite">
+  <meta name="author" content="Shouvik Pradhan">
+  <meta name="theme-color" content="#0C0D12">
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:title" content="Dhaar — Offline-First Loan Management & Servicing Engine">
+  <meta property="og:description" content="Complete loan origination, dynamic payment waterfall servicing, and field debt recovery — zero cloud dependence, 100% private.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/icon-512.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/icon.png" alt="Dhaar Logo" class="brand-icon">
+        <div class="brand-title">
+          <span>Dhaar <small style="font-weight:400; opacity:0.8;">(उधार)</small></span>
+          <span class="sub">Lending Suite</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#calculator" class="nav-link">Calculator</a></li>
+          <li><a href="#architecture" class="nav-link">Architecture</a></li>
+          <li><a href="guide.html" class="nav-link">User Manual</a></li>
+          <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="nav-link">Terms</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#download" class="btn btn-primary btn-sm">Get App</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-pill">
+        <span class="pill pill-violet">⚡ 100% Offline-First SQLite Engine</span>
+      </div>
+
+      <h1 class="hero-title">
+        Professional Loan Management.<br>
+        <span class="gradient-text">Zero Cloud Dependencies.</span>
+      </h1>
+
+      <p class="hero-desc">
+        A complete mobile lending suite combining <strong>Loan Origination (LOS)</strong>, 
+        enterprise <strong>Payment Waterfall Servicing (LMS)</strong>, and rapid <strong>Field Debt Recovery</strong>. 
+        Engineered for microfinance operators, independent lenders, credit unions, and business managers.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-5h2v5h-2zm0-7v-2h2v2h-2z"/></svg>
+          Download for iOS & Android
+        </a>
+        <a href="guide.html" class="btn btn-secondary btn-lg">Explore Feature Guide</a>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Offline & Private</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4-Tier</div>
+          <div class="stat-label">Waterfall Allocation</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5-Bucket</div>
+          <div class="stat-label">DPD Delinquency Tracking</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0 bytes</div>
+          <div class="stat-label">Remote Cloud Leakage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill pill-violet">End-to-End Capabilities</span>
+        <h2 class="section-title">Institutional Financial Controls in Your Pocket</h2>
+        <p class="section-subtitle">
+          Dhaar bridges the gap between simple paper ledgers and multi-million dollar cloud banking systems, 
+          giving you autonomous financial control.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">📋</div>
+          <h3 class="feature-title">Loan Origination (LOS)</h3>
+          <p class="feature-desc">
+            Complete borrower onboarding with KYC, photo ID capture, Aadhaar/PAN tracking, credit rating tiers, and dynamic loan catalog definitions.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Custom products (Flat rate, Reducing EMI, Daily Khata)</li>
+            <li>✓ Multi-stage underwriting approval workflow</li>
+            <li>✓ Dynamic amortization preview during drafting</li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">⚖️</div>
+          <h3 class="feature-title">Enterprise Servicing (LMS)</h3>
+          <p class="feature-desc">
+            Mathematically rigorous payment waterfall allocating collected cash into late fees, accrued per-diem interest, and principal reduction.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Support for 30/360 and Actual/365 day counts</li>
+            <li>✓ Real-time early settlement & payoff quote generator</li>
+            <li>✓ Immutable audit trail and transaction receipts</li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">🏃</div>
+          <h3 class="feature-title">Field Debt Recovery</h3>
+          <p class="feature-desc">
+            Built specifically for field collection agents and doorstep market recovery with rapid 1-tap increments and instant SMS/WhatsApp share receipts.
+          </p>
+          <ul class="feature-list">
+            <li>✓ 1-tap quick amounts (+₹500, +₹1,000, Exact EMI)</li>
+            <li>✓ Multi-mode payments: Cash, UPI, Bank Transfer</li>
+            <li>✓ Due Today priority queue & overdue aging</li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">📊</div>
+          <h3 class="feature-title">Delinquency Aging (DPD)</h3>
+          <p class="feature-desc">
+            Categorize active risk into international banking standard aging buckets: Current, 1-30 DPD, 31-60 DPD, 61-90 DPD, and 90+ DPD (NPA).
+          </p>
+          <ul class="feature-list">
+            <li>✓ Automatic Days Past Due calculation</li>
+            <li>✓ Configurable late fee penalty engine</li>
+            <li>✓ Portfolio-at-Risk (PAR) visual health metrics</li>
+          </ul>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">🤝</div>
+          <h3 class="feature-title">Promise to Pay (PTP)</h3>
+          <p class="feature-desc">
+            Log formal debtor commitments with promised amounts, target dates, and call logs. Automatically updates to Honored when repayments arrive.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Status tracking: Pending, Honored, Broken</li>
+            <li>✓ Complete collection call & field visit logs</li>
+            <li>✓ Direct WhatsApp & SMS reminder templates</li>
+          </ul>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-box">💼</div>
+          <h3 class="feature-title">Investor Syndication</h3>
+          <p class="feature-desc">
+            Track multi-party loan participation. Allocate fractional portions of principal and yield automatically to peer investors or syndicate partners.
+          </p>
+          <ul class="feature-list">
+            <li>✓ Pro-rata principal & interest yield payouts</li>
+            <li>✓ Individual investor ledger & balance tracking</li>
+            <li>✓ Multi-currency portfolio support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator Section -->
+  <section id="calculator" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill pill-violet">Dynamic Engine</span>
+        <h2 class="section-title">Interactive Amortization Calculator</h2>
+        <p class="section-subtitle">
+          Experience Dhaar's dual-method computation engine right in your browser. 
+          Toggle between Flat Interest and Reducing Balance EMI.
+        </p>
+      </div>
+
+      <div class="calc-container">
+        <!-- Form -->
+        <div class="calc-form">
+          <div class="form-group">
+            <label class="form-label" for="calc-amount">Loan Principal (₹)</label>
+            <input type="number" id="calc-amount" class="form-input" value="50000" step="5000" min="1000">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="calc-rate">Annual Interest Rate (%)</label>
+            <input type="number" id="calc-rate" class="form-input" value="18" step="0.5" min="1" max="100">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="calc-tenure">Tenure (Months)</label>
+            <input type="number" id="calc-tenure" class="form-input" value="12" min="1" max="120">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="calc-frequency">Repayment Frequency</label>
+            <select id="calc-frequency" class="form-select">
+              <option value="monthly" selected>Monthly Installments</option>
+              <option value="weekly">Weekly Installments</option>
+              <option value="daily">Daily Installments (Khata)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="calc-type">Interest Computation Method</label>
+            <select id="calc-type" class="form-select">
+              <option value="reducing" selected>Reducing Balance (Amortized EMI)</option>
+              <option value="flat">Flat Interest Rate</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="calc-result-box">
+          <div class="calc-highlight">
+            <div class="calc-highlight-title">Estimated Installment (EMI)</div>
+            <div class="calc-highlight-value" id="res-emi">₹4,584</div>
+          </div>
+
+          <div class="calc-breakdown">
+            <div class="breakdown-item">
+              <div class="breakdown-label">Total Interest</div>
+              <div class="breakdown-val" id="res-interest">₹5,008</div>
+            </div>
+            <div class="breakdown-item">
+              <div class="breakdown-label">Total Payable</div>
+              <div class="breakdown-val" id="res-total">₹55,008</div>
+            </div>
+            <div class="breakdown-item">
+              <div class="breakdown-label">Est. Processing Fee</div>
+              <div class="breakdown-val" id="res-fee">₹750</div>
+            </div>
+            <div class="breakdown-item">
+              <div class="breakdown-label">Architecture</div>
+              <div class="breakdown-val" style="color:var(--status-green);">Local SQLite</div>
+            </div>
+          </div>
+
+          <div style="font-size:0.8rem; color:var(--text-muted); text-align:center;">
+            * Calculated with exact actuarial amortization formulas implemented in the Dhaar core engine.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waterfall Architecture Showcase -->
+  <section id="architecture" class="section">
+    <div class="container">
+      <div class="arch-grid">
+        <div>
+          <span class="pill pill-green">Institutional Discipline</span>
+          <h2 class="section-title" style="margin-top:14px;">The Strict Enterprise Payment Waterfall</h2>
+          <p style="color:var(--text-secondary); margin-bottom:24px;">
+            In informal lending, miscalculating interest versus principal reduction causes severe ledger disputes. 
+            Dhaar eliminates ambiguity by enforcing the standard commercial banking waterfall on every collection.
+          </p>
+
+          <div class="waterfall-flow">
+            <div class="waterfall-step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Late Penalties & Fees First</h4>
+                <p>Repayments first clear any accrued late fee penalties or NSF charges.</p>
+              </div>
+            </div>
+
+            <div class="waterfall-step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Accrued Interest Next</h4>
+                <p>Funds then cover accrued per-diem interest up to the exact date of payment.</p>
+              </div>
+            </div>
+
+            <div class="waterfall-step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Principal Balance Reduction</h4>
+                <p>The remaining payment directly reduces outstanding principal balance.</p>
+              </div>
+            </div>
+
+            <div class="waterfall-step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Excess / Prepayment Handling</h4>
+                <p>Any surplus automatically accelerates future installments or settles the contract.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-xl); padding:36px;">
+          <h3 style="font-size:1.3rem; margin-bottom:16px;">Zero Cloud Risk</h3>
+          <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:20px;">
+            Unlike cloud-based FinTech apps that transmit customer identities and financial balances to remote servers, 
+            <strong>Dhaar keeps 100% of your records encrypted in a local SQLite database</strong> on your physical device.
+          </p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+            <li style="display:flex; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
+              <span style="color:var(--status-green);">✔</span>
+              <span><strong>No Account Sign-in Required:</strong> Open the app and begin servicing immediately.</span>
+            </li>
+            <li style="display:flex; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
+              <span style="color:var(--status-green);">✔</span>
+              <span><strong>Write-Ahead Logging (WAL):</strong> Immune to sudden app kills or battery cutoffs.</span>
+            </li>
+            <li style="display:flex; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
+              <span style="color:var(--status-green);">✔</span>
+              <span><strong>One-Tap Local Backup:</strong> Export full JSON ledgers anytime to your local drive.</span>
+            </li>
+          </ul>
+
+          <div style="text-align:center;">
+            <a href="data-safety.html" class="btn btn-secondary btn-sm" style="width:100%;">Read Data Safety & Privacy Spec</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download & Compliance Links -->
+  <section id="download" class="section section-alt">
+    <div class="container" style="text-align:center;">
+      <span class="pill pill-violet">Available for iOS & Android</span>
+      <h2 class="section-title" style="margin-top:14px;">Deploy Dhaar for Your Lending Portfolio</h2>
+      <p class="section-subtitle" style="margin-bottom:36px;">
+        Compatible with Apple iOS 14.0+, iPadOS, Android 8.0+ (Oreo to Android 15), macOS, and Desktop.
+      </p>
+
+      <div class="store-badges">
+        <!-- App Store Badge -->
+        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" class="store-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.64 1.35-.58.66-1.09 1.73-.95 2.76 1.01.08 2.05-.51 2.67-1.26z"/>
+          </svg>
+          <div class="store-badge-text">
+            <span class="store-badge-sub">Download on the</span>
+            <span class="store-badge-main">App Store</span>
+          </div>
+        </a>
+
+        <!-- Google Play Badge -->
+        <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" class="store-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a2.023 2.023 0 0 1-.22-.924V2.738c0-.336.08-.654.22-.924zM15.207 13.414l2.42 2.42-12.723 7.348 10.303-9.768zm0-2.828L4.904.818 17.627 8.166l-2.42 2.42zm1.414 1.414l3.167 1.83a1.597 1.597 0 0 0 0-2.768l-3.167 1.83z"/>
+          </svg>
+          <div class="store-badge-text">
+            <span class="store-badge-sub">Get it on</span>
+            <span class="store-badge-main">Google Play</span>
+          </div>
+        </a>
+      </div>
+
+      <div style="margin-top:32px; font-size:0.85rem; color:var(--text-muted);">
+        Package Identifier: <code>com.shouvikpradhan.dhaar</code> | Version: <code>1.0.0</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="pill pill-violet">Frequently Asked Questions</span>
+        <h2 class="section-title">Everything You Need to Know</h2>
+        <p class="section-subtitle">Common queries regarding licensing, data security, and operations.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is Dhaar an NBFC, bank, or online credit lender?</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong>No. Dhaar is strictly a financial calculation, record-keeping, and loan portfolio servicing software utility.</strong> 
+              Dhaar does not provide financing, loans, credit brokerage, or fund disbursement. All credit underwriting decisions, funding, and agreements are negotiated independently by you in compliance with your local state and national laws.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does Dhaar send customer records or loan data to any cloud server?</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No. Dhaar adheres to a strict <strong>zero cloud tracking policy</strong>. 100% of your borrower profiles, government identity cards, repayment transactions, and financial metrics are saved locally in your device's isolated SQLite sandbox. No remote server has access to your records.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens if I lose my phone or change devices?</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              In Dhaar's Settings screen, you can use the <strong>Export Portfolio Backup</strong> feature to generate a portable JSON backup file. You can save this file securely to your private iCloud, Google Drive, or physical storage. You can restore your entire portfolio on any other device instantly.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I record field collections without cellular connectivity?</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes! Dhaar is engineered for offline reliability. Field agents can collect payments in remote villages, basements, or outdoor markets with zero network bars. When connected, receipts can be shared via WhatsApp, SMS, or printer with one tap.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does Dhaar handle early loan payoffs?</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Dhaar includes an automated <strong>Payoff Quote Generator</strong> that computes the exact principal balance, accrued per-diem interest up to the exact payment date, unpaid fees, and prepayments to give an unambiguous settlement figure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand" style="margin-bottom:12px;">
+            <img src="assets/icon.png" alt="Dhaar Icon" class="brand-icon">
+            <div class="brand-title">
+              <span>Dhaar <small>(उधार)</small></span>
+              <span class="sub">Lending Suite</span>
+            </div>
+          </a>
+          <p>
+            Enterprise-grade, offline-first mobile lending engine built for microfinance institutions, field collectors, and independent lenders.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">LOS & LMS Features</a></li>
+            <li><a href="#calculator">Loan Calculator</a></li>
+            <li><a href="#architecture">Payment Waterfall</a></li>
+            <li><a href="guide.html">User Documentation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Compliance & Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="data-safety.html">Data Safety & Deletion</a></li>
+            <li><a href="support.html">App Store Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Developer & Support</h4>
+          <ul>
+            <li><a href="support.html">Contact Help Desk</a></li>
+            <li><a href="https://github.com/shouvikpradhan/dhaar" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="guide.html#backup">Backup & Migration</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Dhaar. Developed by Shouvik Pradhan. All rights reserved.
+        </div>
+        <div>
+          <a href="privacy.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Privacy</a>
+          <a href="terms.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Terms</a>
+          <a href="data-safety.html" style="color:var(--text-muted); text-decoration:none;">Data Safety</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

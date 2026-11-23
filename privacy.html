@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Dhaar (उधार)</title>
+  <meta name="description" content="Privacy Policy for Dhaar - Offline Mobile Lending Suite. Disclosing our 100% offline-first architecture, local device permissions, and zero cloud tracking guarantee.">
+  <meta name="author" content="Shouvik Pradhan">
+  <meta name="theme-color" content="#0C0D12">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/icon.png" alt="Dhaar Logo" class="brand-icon">
+        <div class="brand-title">
+          <span>Dhaar <small style="font-weight:400; opacity:0.8;">(उधार)</small></span>
+          <span class="sub">Privacy Policy</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="guide.html" class="nav-link">User Manual</a></li>
+          <li><a href="privacy.html" class="nav-link active">Privacy Policy</a></li>
+          <li><a href="terms.html" class="nav-link">Terms</a></li>
+          <li><a href="data-safety.html" class="nav-link">Data Safety</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#download" class="btn btn-secondary btn-sm">Download App</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Legal Main Content -->
+  <main class="legal-wrapper">
+    <div class="container">
+      <div class="legal-header">
+        <span class="pill pill-green">Apple & Google Play Compliant</span>
+        <h1 class="legal-title" style="margin-top:14px;">Privacy Policy</h1>
+        <div class="legal-meta">
+          <span><strong>Application:</strong> Dhaar (com.shouvikpradhan.dhaar)</span>
+          <span><strong>Effective Date:</strong> November 23, 2026</span>
+          <span><strong>Developer:</strong> Shouvik Pradhan</span>
+        </div>
+      </div>
+
+      <div class="legal-content">
+        <div class="legal-box">
+          <strong>Summary Guarantee:</strong> Dhaar is built with an <strong>Offline-First Architecture</strong>. We do NOT collect, harvest, store, or transmit your personal, financial, or customer data to any remote server or third-party service. All records stay solely on your physical device.
+        </div>
+
+        <h2>1. Overview & Commitment to Privacy</h2>
+        <p>
+          This Privacy Policy applies to the mobile application <strong>Dhaar (उधार)</strong> ("the Application", "we", "us", or "our"), developed by Shouvik Pradhan. It describes how user data is handled when you use the Application on Android, iOS, iPadOS, macOS, or desktop platforms.
+        </p>
+        <p>
+          We believe financial record-keeping should be completely sovereign, confidential, and safe from surveillance. The Application is designed from the ground up to operate without cloud infrastructure, user accounts, or telemetry.
+        </p>
+
+        <h2>2. Information Stored Locally on Your Device</h2>
+        <p>
+          When you utilize the features of the Application, you may input sensitive financial and personal records. <strong>This information is saved solely in a local, encrypted/sandboxed SQLite database on your device:</strong>
+        </p>
+        <ul>
+          <li><strong>Borrower Information:</strong> Names, mobile numbers, email addresses, residential/business addresses, national identity card numbers (e.g., PAN, Aadhaar, Voter ID, National ID), and risk ratings.</li>
+          <li><strong>Loan & Financial Metrics:</strong> Principal amounts, interest rates, repayment schedules, amortization schedules, installments, transactional receipts, penalty fees, and payoff quotes.</li>
+          <li><strong>Collection Records:</strong> Promise-to-Pay (PTP) commitments, collection notes, call records, and delinquency aging buckets.</li>
+          <li><strong>Investor & Syndication Data:</strong> Syndicate partner profiles, participation quotas, and payout distributions.</li>
+          <li><strong>Photos & Attachments:</strong> Borrower portrait photos and identity verification documents captured via your camera or chosen from your gallery. These media files remain stored strictly in the Application’s private file storage container.</li>
+        </ul>
+
+        <h2>3. Device Permissions & Purpose of Use</h2>
+        <p>
+          The Application requests specific platform permissions strictly to provide local functionality. None of these permissions are used to upload information to external servers:
+        </p>
+
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Platform</th>
+              <th>Usage Purpose</th>
+              <th>Data Transmission</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>CAMERA</code><br>(<code>NSCameraUsageDescription</code>)</td>
+              <td>Android & iOS</td>
+              <td>Used solely to capture KYC borrower portraits and physical loan agreement documents.</td>
+              <td><strong>None.</strong> Saved to private local device sandbox.</td>
+            </tr>
+            <tr>
+              <td><code>READ_MEDIA_IMAGES</code> / Photo Library<br>(<code>NSPhotoLibraryUsageDescription</code>)</td>
+              <td>Android & iOS</td>
+              <td>Used to select existing identity documents or business photos from your local library.</td>
+              <td><strong>None.</strong> Never uploaded to any external server.</td>
+            </tr>
+            <tr>
+              <td><code>INTERNET</code></td>
+              <td>Android</td>
+              <td>Required by Flutter framework packages for system share sheets (e.g., exporting backup files or sharing formatted WhatsApp receipts).</td>
+              <td><strong>Zero telemetry or database traffic.</strong> The core app requires zero internet.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>4. Third-Party Analytics & Advertising</h2>
+        <p>
+          Dhaar does <strong>NOT</strong> embed or utilize:
+        </p>
+        <ul>
+          <li>Any advertising SDKs (e.g., Google AdMob, Unity Ads, Meta Audience Network).</li>
+          <li>Any third-party analytics trackers (e.g., Google Firebase Analytics, AppsFlyer, Mixpanel).</li>
+          <li>Any crash reporting tools that send personally identifiable information (PII).</li>
+        </ul>
+        <p>Your usage patterns, loan volume, borrower roster, and balance sheets are completely private.</p>
+
+        <h2>5. Data Retention, Backups & Deletion</h2>
+        <h3>How Long Is Your Data Retained?</h3>
+        <p>
+          Your data is retained on your local device until you explicitly choose to clear the database within the Application or uninstall the Application from your device.
+        </p>
+
+        <h3>Data Export & Portability</h3>
+        <p>
+          You have full ownership of your data. The Application features a built-in <strong>JSON Data Export</strong> option in <em>Settings &gt; Data Management</em>. You can save your portfolio backup to your preferred personal storage at any time.
+        </p>
+
+        <h3>Complete Data Deletion</h3>
+        <p>
+          You have full control over data deletion without requiring developer intervention:
+        </p>
+        <ul>
+          <li><strong>In-App Deletion:</strong> Navigate to <em>Settings &gt; Clear All Data / Reset Database</em> to permanently erase all borrower records, loans, transaction ledgers, and KYC photos.</li>
+          <li><strong>OS-Level Deletion:</strong> Uninstalling the Application or choosing "Clear Storage / Data" in your device OS Settings permanently erases the local SQLite database and media attachments.</li>
+        </ul>
+
+        <h2>6. Compliance with App Store & Google Play Policies</h2>
+        <h3>Google Play Financial Services & User Data Policy</h3>
+        <p>
+          Dhaar complies with Google Play’s Financial Services and Personal and Sensitive User Data Policies. Dhaar does not disburse loans, connect to user bank accounts, or act as an intermediary lender. All calculations and ledger entries are user-defined record-keeping tools.
+        </p>
+
+        <h3>Apple App Store Review Guidelines (Guideline 5.1)</h3>
+        <p>
+          Dhaar conforms to Apple’s stringent privacy guidelines. The Application does not track users across other apps or websites, does not use the Advertising Identifier (IDFA), and operates autonomously in compliance with sandbox constraints.
+        </p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>
+          The Application is intended for adult professionals, microfinance managers, credit operators, and business owners. We do not knowingly collect or store information from children under the age of 18.
+        </p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. Any changes will be published on this website with an updated revision date. As the Application has no backend connectivity, policy changes will also accompany app release notes.
+        </p>
+
+        <h2>9. Contact Information</h2>
+        <p>
+          If you have questions, feedback, or concerns regarding this Privacy Policy or the security of the Application, please contact the developer:
+        </p>
+        <div class="legal-box">
+          <strong>Developer:</strong> Shouvik Pradhan<br>
+          <strong>Email:</strong> <a href="mailto:support@shouvikpradhan.com" style="color:var(--brand-violet-light);">support@shouvikpradhan.com</a><br>
+          <strong>Project Repository:</strong> <a href="https://github.com/shouvikpradhan/dhaar" target="_blank" rel="noopener noreferrer" style="color:var(--brand-violet-light);">github.com/shouvikpradhan/dhaar</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>© 2026 Dhaar. Developed by Shouvik Pradhan.</div>
+      <div>
+        <a href="index.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Home</a>
+        <a href="terms.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Terms of Service</a>
+        <a href="data-safety.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Data Safety</a>
+        <a href="support.html" style="color:var(--text-muted); text-decoration:none;">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

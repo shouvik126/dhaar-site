@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Safety & Deletion — Dhaar (उधार)</title>
+  <meta name="description" content="Google Play Data Safety Declaration and Apple Account & Data Deletion instructions for Dhaar. Explains offline data storage and complete deletion procedures.">
+  <meta name="author" content="Shouvik Pradhan">
+  <meta name="theme-color" content="#0C0D12">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/icon.png" alt="Dhaar Logo" class="brand-icon">
+        <div class="brand-title">
+          <span>Dhaar <small style="font-weight:400; opacity:0.8;">(उधार)</small></span>
+          <span class="sub">Data Safety & Deletion</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="guide.html" class="nav-link">User Manual</a></li>
+          <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="nav-link">Terms</a></li>
+          <li><a href="data-safety.html" class="nav-link active">Data Safety</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#download" class="btn btn-secondary btn-sm">Download App</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-wrapper">
+    <div class="container">
+      <div class="legal-header">
+        <span class="pill pill-green">Google Play & App Store Compliance</span>
+        <h1 class="legal-title" style="margin-top:14px;">Data Safety & Deletion Declaration</h1>
+        <div class="legal-meta">
+          <span><strong>Package:</strong> com.shouvikpradhan.dhaar</span>
+          <span><strong>Architecture:</strong> 100% On-Device Storage (SQLite)</span>
+          <span><strong>Account Requirement:</strong> No Account Needed</span>
+        </div>
+      </div>
+
+      <div class="legal-content">
+        <div class="legal-box">
+          <strong>Key Statement for App Reviewers & Users:</strong> Dhaar does not host an external web service, does not require an account creation process, and does not synchronize records to any remote cloud. <strong>All data entered into the application remains solely on your physical device.</strong>
+        </div>
+
+        <h2>1. Google Play Data Safety Questionnaire Breakdown</h2>
+        <p>
+          The table below discloses every category of user information handled by Dhaar in exact alignment with the Google Play Console Data Safety declaration requirements:
+        </p>
+
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>Collected?</th>
+              <th>Shared with 3rd Parties?</th>
+              <th>Transmitted Off-Device?</th>
+              <th>Security / Storage Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Personal Info</strong><br>(Name, Phone, Address, Email)</td>
+              <td>Yes (User entered)</td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong> (0 bytes sent)</td>
+              <td>Sandboxed local SQLite database</td>
+            </tr>
+            <tr>
+              <td><strong>Government ID / KYC</strong><br>(Aadhaar, PAN, Voter ID)</td>
+              <td>Yes (User entered)</td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong> (0 bytes sent)</td>
+              <td>Sandboxed local SQLite database</td>
+            </tr>
+            <tr>
+              <td><strong>Financial Info</strong><br>(Loan amounts, repayments, DPD)</td>
+              <td>Yes (User entered)</td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong> (0 bytes sent)</td>
+              <td>Sandboxed local SQLite database</td>
+            </tr>
+            <tr>
+              <td><strong>Photos / Videos</strong><br>(Borrower portraits, KYC ID images)</td>
+              <td>Yes (Optional attachment)</td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong> (0 bytes sent)</td>
+              <td>Private App Sandbox directory (isolated storage)</td>
+            </tr>
+            <tr>
+              <td><strong>Location Data</strong></td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong></td>
+              <td>Not accessed or recorded</td>
+            </tr>
+            <tr>
+              <td><strong>Device or Other IDs</strong><br>(Advertising ID / IDFA)</td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong></td>
+              <td><strong>NO</strong></td>
+              <td>Not accessed or tracked</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>2. Data Deletion Policy & Step-by-Step Instructions</h2>
+        <p>
+          Both Apple App Store Review Guidelines (5.1.1) and Google Play Developer Policies require apps to provide straightforward mechanisms for users to request or perform complete data deletion.
+        </p>
+        <p>
+          Because Dhaar does not maintain server accounts or remote user databases, you have instant, sovereign control to delete your data at any time without waiting for developer approval.
+        </p>
+
+        <h3>Method 1: In-App Complete Data Reset (Immediate)</h3>
+        <p>To purge all borrower profiles, loans, transactions, logs, and photos from within the app:</p>
+        <ol>
+          <li>Launch the <strong>Dhaar</strong> app on your device.</li>
+          <li>Tap on the <strong>Settings</strong> icon in the bottom navigation bar or top app bar.</li>
+          <li>Scroll down to the <strong>Data Management</strong> section.</li>
+          <li>Tap <strong>Clear All Data & Reset Database</strong>.</li>
+          <li>Confirm the prompt. All SQLite tables, WAL logs, and KYC photo attachments in the application container will be permanently deleted immediately.</li>
+        </ol>
+
+        <h3>Method 2: Deleting Specific Records</h3>
+        <p>If you only wish to delete specific borrowers or loans rather than the entire database:</p>
+        <ul>
+          <li><strong>Delete Borrower:</strong> Navigate to the <em>Borrowers</em> tab, open the borrower's profile, tap the options menu (⋮), and select <em>Delete Borrower</em>. This removes the borrower and associated KYC photos.</li>
+          <li><strong>Delete Loan Contract:</strong> Open the loan detail view in the <em>Servicing</em> tab, tap options, and choose <em>Cancel / Delete Contract</em>.</li>
+        </ul>
+
+        <h3>Method 3: Complete Device OS Purge (Uninstall)</h3>
+        <p>Because all data resides exclusively in your platform’s private application sandbox:</p>
+        <ul>
+          <li><strong>Android:</strong> Go to <em>Settings &gt; Apps &gt; Dhaar &gt; Storage & cache &gt; Clear Storage</em>, or simply long-press the Dhaar app icon and tap <strong>Uninstall</strong>. The OS immediately destroys all local databases and media files.</li>
+          <li><strong>iOS:</strong> Long-press the Dhaar icon on your Home Screen, tap <strong>Remove App</strong>, and select <strong>Delete App</strong>. iOS purges all files inside the sandbox container.</li>
+        </ul>
+
+        <h2>3. Local Backup & Data Portability</h2>
+        <p>
+          Before performing a deletion or when migrating to a new phone, you can export an unencrypted JSON summary of your portfolio:
+        </p>
+        <ol>
+          <li>Open <em>Settings &gt; Export Portfolio (JSON)</em>.</li>
+          <li>Select your preferred storage location via the native OS share sheet (e.g., Save to Files, AirDrop, or local USB).</li>
+          <li>You can retain this file for your official tax or accounting audit records.</li>
+        </ol>
+
+        <h2>4. Data Security Practices</h2>
+        <p>
+          Even though data is stored offline, Dhaar enforces modern security best practices:
+        </p>
+        <ul>
+          <li><strong>OS Sandbox Isolation:</strong> Other installed applications on your phone cannot access Dhaar’s SQLite database or media folder.</li>
+          <li><strong>Write-Ahead Logging (WAL):</strong> Ensures zero corruption or orphaned database writes during device restarts.</li>
+          <li><strong>No Background Web Scraping or Uploading:</strong> The app does not ping remote APIs in the background.</li>
+        </ul>
+
+        <h2>5. Assistance & Inquiries</h2>
+        <p>
+          If you have questions about how data is stored or need assistance with database clearing, please contact us:
+        </p>
+        <div class="legal-box">
+          <strong>Support Contact:</strong> Shouvik Pradhan<br>
+          <strong>Email:</strong> <a href="mailto:support@shouvikpradhan.com" style="color:var(--brand-violet-light);">support@shouvikpradhan.com</a><br>
+          <strong>GitHub Issues:</strong> <a href="https://github.com/shouvikpradhan/dhaar/issues" target="_blank" rel="noopener noreferrer" style="color:var(--brand-violet-light);">github.com/shouvikpradhan/dhaar/issues</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>© 2026 Dhaar. Developed by Shouvik Pradhan.</div>
+      <div>
+        <a href="index.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Home</a>
+        <a href="privacy.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Privacy Policy</a>
+        <a href="terms.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Terms</a>
+        <a href="support.html" style="color:var(--text-muted); text-decoration:none;">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

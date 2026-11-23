@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Support & Help Desk — Dhaar (उधार)</title>
+  <meta name="description" content="Official App Support, Help Desk, and Contact for Dhaar - Offline Mobile Lending Suite.">
+  <meta name="author" content="Shouvik Pradhan">
+  <meta name="theme-color" content="#0C0D12">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/icon.png" alt="Dhaar Logo" class="brand-icon">
+        <div class="brand-title">
+          <span>Dhaar <small style="font-weight:400; opacity:0.8;">(उधार)</small></span>
+          <span class="sub">Support & Help</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="guide.html" class="nav-link">User Manual</a></li>
+          <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="nav-link">Terms</a></li>
+          <li><a href="data-safety.html" class="nav-link">Data Safety</a></li>
+          <li><a href="support.html" class="nav-link active">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#download" class="btn btn-secondary btn-sm">Download App</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-wrapper">
+    <div class="container">
+      <div class="legal-header">
+        <span class="pill pill-violet">Customer & Technical Support</span>
+        <h1 class="legal-title" style="margin-top:14px;">App Support & Help Center</h1>
+        <div class="legal-meta">
+          <span><strong>Target Audience:</strong> Users, Field Agents, Store Review Teams</span>
+          <span><strong>Typical Response Time:</strong> Within 24-48 Hours</span>
+        </div>
+      </div>
+
+      <div class="legal-content">
+        <div class="calc-container" style="margin-bottom:48px;">
+          <div>
+            <h2 style="margin-top:0; border:none; padding:0;">Get in Touch Directly</h2>
+            <p style="color:var(--text-secondary); margin-bottom:20px;">
+              Need help setting up your loan products, understanding the payment waterfall, or reporting an issue? Reach out to our developer team.
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:16px;">
+              <div class="waterfall-step">
+                <div class="step-num">✉️</div>
+                <div class="step-content">
+                  <h4>Email Support</h4>
+                  <p><a href="mailto:support@shouvikpradhan.com" style="color:var(--brand-violet-light);">support@shouvikpradhan.com</a></p>
+                </div>
+              </div>
+
+              <div class="waterfall-step">
+                <div class="step-num">🐛</div>
+                <div class="step-content">
+                  <h4>Issue Tracker & Bug Reports</h4>
+                  <p><a href="https://github.com/shouvikpradhan/dhaar/issues" target="_blank" rel="noopener noreferrer" style="color:var(--brand-violet-light);">github.com/shouvikpradhan/dhaar/issues</a></p>
+                </div>
+              </div>
+
+              <div class="waterfall-step">
+                <div class="step-num">📖</div>
+                <div class="step-content">
+                  <h4>User Guide & Manual</h4>
+                  <p><a href="guide.html" style="color:var(--brand-violet-light);">Read the Complete Operational Manual</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-surface); padding:28px; border-radius:var(--radius-lg); border:1px solid var(--border-subtle);">
+            <h3 style="margin-top:0;">Send a Support Message</h3>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:16px;">
+              Click below to draft an email with pre-filled device diagnostic placeholders:
+            </p>
+            <a href="mailto:support@shouvikpradhan.com?subject=Dhaar%20Support%20Request&body=Hi%20Shouvik,%0A%0AI%20am%20using%20Dhaar%20and%20need%20assistance%20with:%0A%0A-%20Device%20Model%20(e.g.%20iPhone%2015,%20Pixel%208):%20%0A-%20OS%20Version%20(iOS/Android):%20%0A-%20Dhaar%20App%20Version:%201.0.0%0A-%20Issue%20Description:%20%0A%0AThank%20you!" class="btn btn-primary" style="width:100%; text-align:center;">
+              Open Email Client
+            </a>
+          </div>
+        </div>
+
+        <h2>Common Troubleshooting Scenarios</h2>
+
+        <h3>1. How do I backup my database before getting a new phone?</h3>
+        <p>
+          Go to <strong>Settings &gt; Data Management &gt; Export Portfolio Backup</strong>. 
+          Save the exported JSON file to your Google Drive, iCloud Files, or email it to yourself. On your new phone, install Dhaar and use the <strong>Import Portfolio</strong> option in Settings to restore all borrowers, active loans, and transaction histories seamlessly.
+        </p>
+
+        <h3>2. Why is my collection receipt sharing not opening WhatsApp?</h3>
+        <p>
+          When you tap "Share Receipt" in the Rapid Field Collection screen, Dhaar opens the native OS share sheet. Ensure WhatsApp or your preferred messaging app is installed on the device and granted standard sharing permissions.
+        </p>
+
+        <h3>3. How do I change between Reducing Balance and Flat Rate loans?</h3>
+        <p>
+          When configuring or creating a loan product in <strong>Origination &gt; Loan Products &gt; Add Product</strong>, select your desired <em>Amortization Method</em>. You can choose:
+        </p>
+        <ul>
+          <li><strong>Reducing Balance (EMI):</strong> Interest is computed strictly on the remaining principal balance.</li>
+          <li><strong>Flat Rate:</strong> Interest is calculated upfront across the entire loan tenure.</li>
+        </ul>
+
+        <h3>4. Can multiple field collection agents sync to one central ledger?</h3>
+        <p>
+          Dhaar is designed as an autonomous, 100% offline mobile engine to maximize speed and data privacy without recurring server fees. Each device operates independently with its local SQLite database. Agents can export end-of-day JSON transaction files to consolidate in desktop spreadsheet tools.
+        </p>
+
+        <h3>5. What if the app closes unexpectedly during a collection?</h3>
+        <p>
+          Dhaar uses SQLite in <strong>Write-Ahead Logging (WAL)</strong> mode with atomic ACID transaction blocks. Even if your phone battery dies mid-entry, the database will never corrupt. Incompleted transactions roll back cleanly, while saved transactions remain permanent.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>© 2026 Dhaar. Developed by Shouvik Pradhan.</div>
+      <div>
+        <a href="index.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Home</a>
+        <a href="privacy.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Privacy Policy</a>
+        <a href="terms.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Terms</a>
+        <a href="data-safety.html" style="color:var(--text-muted); text-decoration:none;">Data Safety</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

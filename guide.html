@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Manual & Documentation — Dhaar (उधार)</title>
+  <meta name="description" content="Complete user manual, operational walkthrough, and financial documentation for Dhaar - Offline Mobile Lending Suite.">
+  <meta name="author" content="Shouvik Pradhan">
+  <meta name="theme-color" content="#0C0D12">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="assets/icon.png" alt="Dhaar Logo" class="brand-icon">
+        <div class="brand-title">
+          <span>Dhaar <small style="font-weight:400; opacity:0.8;">(उधार)</small></span>
+          <span class="sub">User Manual</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="guide.html" class="nav-link active">User Manual</a></li>
+          <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="nav-link">Terms</a></li>
+          <li><a href="data-safety.html" class="nav-link">Data Safety</a></li>
+          <li><a href="support.html" class="nav-link">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#download" class="btn btn-secondary btn-sm">Download App</a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-wrapper">
+    <div class="container">
+      <div class="legal-header">
+        <span class="pill pill-violet">Complete Operations Guide</span>
+        <h1 class="legal-title" style="margin-top:14px;">Dhaar Official User Manual</h1>
+        <div class="legal-meta">
+          <span><strong>Suite:</strong> Loan Origination (LOS) + Servicing (LMS) + Collections</span>
+          <span><strong>Engine Version:</strong> 1.0.0</span>
+        </div>
+      </div>
+
+      <div class="legal-content">
+        <div class="legal-box">
+          <strong>Welcome to Dhaar (उधार):</strong> This manual walks you through onboarding borrowers, originating loan contracts, running amortizations, processing payments through the enterprise waterfall, tracking delinquency buckets, and exporting backups.
+        </div>
+
+        <h2>Module 1: Loan Origination System (LOS)</h2>
+        <h3>1.1 Borrower Onboarding & KYC</h3>
+        <p>
+          Before creating a loan, enter the borrower’s profile:
+        </p>
+        <ul>
+          <li>Go to the <strong>Borrowers</strong> tab and tap <strong>+ Add Borrower</strong>.</li>
+          <li>Enter their Full Legal Name, Phone Number, Email, and Residential / Business Address.</li>
+          <li>Provide their National Identity Number (e.g., Aadhaar, PAN card, or Voter ID).</li>
+          <li>Capture or select a <strong>KYC Portrait Photo</strong> and <strong>Identity Card Image</strong>. These images are stored locally in the application’s private sandbox folder.</li>
+          <li>Assign an initial Underwriting Risk Tier: <code>Grade A</code> (Lowest Risk) through <code>Grade D</code> (High Risk).</li>
+        </ul>
+
+        <h3>1.2 Configuring Loan Products</h3>
+        <p>
+          Dhaar allows defining parameterized loan products tailored to your market:
+        </p>
+        <ul>
+          <li><strong>Micro-Enterprise Weekly:</strong> Flat interest rate, 52-week recovery, weekly installments.</li>
+          <li><strong>Personal Term Loan:</strong> Reducing balance EMI, monthly installments, 12 to 36 months.</li>
+          <li><strong>Merchant Working Capital:</strong> Reducing balance inventory finance with monthly or bi-weekly cycles.</li>
+          <li><strong>Daily Khata / Doorstep Recovery:</strong> Flat rate with daily micro-installments for vendors and stall owners.</li>
+        </ul>
+
+        <h3>1.3 Application Drafting & Live Amortization Preview</h3>
+        <p>
+          When drafting a new loan application in <strong>Origination &gt; New Application</strong>, the built-in calculation engine generates a <strong>Live Amortization Preview</strong> in real time. You can inspect:
+        </p>
+        <ul>
+          <li>Calculated periodic installment amount (EMI).</li>
+          <li>Total interest payable over the loan life.</li>
+          <li>Upfront processing fee and net disbursed amount.</li>
+          <li>Complete installment-by-installment schedule (due dates, principal portion, interest portion, ending balances).</li>
+        </ul>
+
+        <h3>1.4 Underwriting & Atomic Disbursement</h3>
+        <p>
+          Applications move through a strict state machine:
+        </p>
+        <p>
+          <code>Draft</code> ➔ <code>Under Review</code> ➔ <code>Approved</code> / <code>Rejected</code> ➔ <code>Disbursed</code>
+        </p>
+        <p>
+          When disbursed, an atomic SQLite transaction creates the active contract, inserts all scheduled installments into the database, and creates an immutable initial disbursement audit ledger record.
+        </p>
+
+        <h2>Module 2: Loan Servicing (LMS)</h2>
+        <h3>2.1 Active Contracts Management</h3>
+        <p>
+          The <strong>Servicing</strong> dashboard provides complete visibility over your deployed capital:
+        </p>
+        <ul>
+          <li><strong>Outstanding Principal:</strong> Total principal remaining across active accounts.</li>
+          <li><strong>Accrued Interest:</strong> Per-diem interest calculated according to your day count convention (e.g., 30/360 or Actual/365).</li>
+          <li><strong>Outstanding Late Fees:</strong> Accumulated penalty fees.</li>
+          <li><strong>Next Due Date & Installment Amount:</strong> Immediate upcoming obligations.</li>
+        </ul>
+
+        <h3>2.2 The Payment Waterfall Engine</h3>
+        <p>
+          When a borrower makes a payment, Dhaar enforces the commercial banking waterfall:
+        </p>
+        <div class="waterfall-flow" style="margin:20px 0;">
+          <div class="waterfall-step">
+            <div class="step-num">Step 1</div>
+            <div class="step-content">
+              <h4>Late Fees & Penalties</h4>
+              <p>Payment clears outstanding penalty fees first.</p>
+            </div>
+          </div>
+          <div class="waterfall-step">
+            <div class="step-num">Step 2</div>
+            <div class="step-content">
+              <h4>Accrued Interest</h4>
+              <p>Payment covers accrued interest on the principal.</p>
+            </div>
+          </div>
+          <div class="waterfall-step">
+            <div class="step-num">Step 3</div>
+            <div class="step-content">
+              <h4>Principal Balance Reduction</h4>
+              <p>Payment reduces the outstanding principal, reducing future interest.</p>
+            </div>
+          </div>
+        </div>
+        <p>
+          Excess payments are treated as early prepayments, accelerating future installments and recalculating payoff settlements.
+        </p>
+
+        <h3>2.3 Early Settlement & Payoff Quotes</h3>
+        <p>
+          If a borrower requests to close their loan early, tap <strong>Generate Payoff Quote</strong> on their loan details screen. Dhaar calculates the exact per-diem interest up to the specified quote date, applies fee waivers or prepayment penalties if configured, and displays the exact total payoff settlement figure.
+        </p>
+
+        <h2>Module 3: Debt Recovery & Field Collections</h2>
+        <h3>3.1 Delinquency Aging Buckets (DPD)</h3>
+        <p>
+          Dhaar automatically classifies overdue contracts into Days Past Due (DPD) aging buckets:
+        </p>
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th>DPD Bucket</th>
+              <th>Classification</th>
+              <th>Action Strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill pill-green">Current (0 DPD)</span></td>
+              <td>Good standing</td>
+              <td>Regular scheduled recovery</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-amber">1 – 30 DPD</span></td>
+              <td>Early Delinquency</td>
+              <td>Friendly WhatsApp reminder, soft phone call</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-amber">31 – 60 DPD</span></td>
+              <td>Moderate Risk</td>
+              <td>Field visit, Promise-to-Pay (PTP) commitment</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-violet">61 – 90 DPD</span></td>
+              <td>Severe Delinquency</td>
+              <td>Formal demand notice, intensive recovery</td>
+            </tr>
+            <tr>
+              <td><span class="pill" style="background:var(--status-red-bg); color:var(--status-red); border:1px solid var(--status-red-border);">90+ DPD</span></td>
+              <td>Non-Performing Asset (NPA)</td>
+              <td>Settlement negotiation, legal recourse or write-off</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>3.2 Rapid Field Collection Mode</h3>
+        <p>
+          Designed for collection agents visiting door-to-door or in busy markets:
+        </p>
+        <ul>
+          <li>Open <strong>Collections &gt; Quick Collect</strong>.</li>
+          <li>Select the borrower from the priority "Due Today" queue.</li>
+          <li>Use 1-tap fast amount buttons: <code>+₹500</code>, <code>+₹1,000</code>, <code>Exact EMI</code>, or <code>Full Payoff</code>.</li>
+          <li>Select payment channel: <strong>Cash</strong>, <strong>UPI</strong>, or <strong>Bank Transfer</strong>.</li>
+          <li>Tap <strong>Submit Collection & Share Receipt</strong> to immediately generate a receipt and launch the WhatsApp/SMS share sheet with a clean, pre-formatted message.</li>
+        </ul>
+
+        <h3>3.3 Promise to Pay (PTP) Management</h3>
+        <p>
+          When a delinquent borrower promises to pay on a specific future date:
+        </p>
+        <ul>
+          <li>Tap <strong>Log Promise to Pay</strong> on the borrower’s profile.</li>
+          <li>Enter the promised amount, scheduled date, and conversation notes.</li>
+          <li>When qualifying repayments are logged on or before the commitment date, Dhaar automatically marks the PTP as <strong>Honored</strong>!</li>
+        </ul>
+
+        <h2 id="backup">Module 4: Backup, Export & Data Sovereignty</h2>
+        <p>
+          Dhaar gives you complete control over your database:
+        </p>
+        <ul>
+          <li><strong>Export Portfolio (JSON):</strong> Creates a clean, human-readable JSON backup of your entire portfolio (borrowers, loans, schedules, transactions).</li>
+          <li><strong>Restore Database:</strong> Imports a JSON backup file to restore your portfolio onto a new phone.</li>
+          <li><strong>Clear / Reset:</strong> Completely purges all data from the device sandbox when starting fresh.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>© 2026 Dhaar. Developed by Shouvik Pradhan.</div>
+      <div>
+        <a href="index.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Home</a>
+        <a href="privacy.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Privacy Policy</a>
+        <a href="terms.html" style="color:var(--text-muted); text-decoration:none; margin-right:16px;">Terms</a>
+        <a href="support.html" style="color:var(--text-muted); text-decoration:none;">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
