@@ -82,21 +82,21 @@
               <td>Yes (User entered)</td>
               <td><strong>NO</strong></td>
               <td><strong>NO</strong> (0 bytes sent)</td>
-              <td>Sandboxed local SQLite database</td>
+              <td>Encrypted local SQLite database (ChaCha20-Poly1305)</td>
             </tr>
             <tr>
               <td><strong>Government ID / KYC</strong><br>(Aadhaar, PAN, Voter ID)</td>
               <td>Yes (User entered)</td>
               <td><strong>NO</strong></td>
               <td><strong>NO</strong> (0 bytes sent)</td>
-              <td>Sandboxed local SQLite database</td>
+              <td>Encrypted local SQLite database (ChaCha20-Poly1305)</td>
             </tr>
             <tr>
               <td><strong>Financial Info</strong><br>(Loan amounts, repayments, DPD)</td>
               <td>Yes (User entered)</td>
               <td><strong>NO</strong></td>
               <td><strong>NO</strong> (0 bytes sent)</td>
-              <td>Sandboxed local SQLite database</td>
+              <td>Encrypted local SQLite database (ChaCha20-Poly1305)</td>
             </tr>
             <tr>
               <td><strong>Photos / Videos</strong><br>(Borrower portraits, KYC ID images)</td>
@@ -169,6 +169,9 @@
           Even though data is stored offline, Dhaar enforces modern security best practices:
         </p>
         <ul>
+          <li><strong>Encryption at Rest:</strong> The loan database is encrypted with ChaCha20-Poly1305. The key is generated on your device, stored in its secure keychain (Android Keystore / iOS Keychain), and never leaves it. Attached photos and documents are not separately encrypted by Dhaar.</li>
+          <li><strong>App Lock:</strong> Optionally require a PIN, with fingerprint or face unlock, to open the app.</li>
+          <li><strong>No Cloud Backup of the Database:</strong> Android cloud backup is disabled for Dhaar, because an encrypted database restored without its device-bound key could not be opened.</li>
           <li><strong>OS Sandbox Isolation:</strong> Other installed applications on your phone cannot access Dhaar’s SQLite database or media folder.</li>
           <li><strong>Write-Ahead Logging (WAL):</strong> Ensures zero corruption or orphaned database writes during device restarts.</li>
           <li><strong>No Background Web Scraping or Uploading:</strong> The app does not ping remote APIs in the background.</li>

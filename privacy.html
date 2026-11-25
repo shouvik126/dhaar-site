@@ -72,7 +72,7 @@
 
         <h2>2. Information Stored Locally on Your Device</h2>
         <p>
-          When you utilize the features of the Application, you may input sensitive financial and personal records. <strong>This information is saved solely in a local, encrypted/sandboxed SQLite database on your device:</strong>
+          When you utilize the features of the Application, you may input sensitive financial and personal records. <strong>This information is saved solely on your device. Loan, borrower and collection records are kept in a local SQLite database that is encrypted with ChaCha20-Poly1305; the encryption key is generated on your device and stored in its secure keychain (iOS/macOS Keychain or Android Keystore). Photos and documents you attach are stored in the Application's private sandbox folder, which is protected by your device's operating system but is not separately encrypted by the Application:</strong>
         </p>
         <ul>
           <li><strong>Borrower Information:</strong> Names, mobile numbers, email addresses, residential/business addresses, national identity card numbers (e.g., PAN, Aadhaar, Voter ID, National ID), and risk ratings.</li>

@@ -336,7 +336,8 @@
           <h3 style="font-size:1.3rem; margin-bottom:16px;">Zero Cloud Risk</h3>
           <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:20px;">
             Unlike cloud-based FinTech apps that transmit customer identities and financial balances to remote servers, 
-            <strong>Dhaar keeps 100% of your records encrypted in a local SQLite database</strong> on your physical device.
+            <strong>Dhaar keeps 100% of your loan records in an encrypted local database</strong> on your physical device.
+            The database is encrypted with ChaCha20-Poly1305 using a key generated on your device and held in its secure keychain.
           </p>
           <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
             <li style="display:flex; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
@@ -346,6 +347,10 @@
             <li style="display:flex; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
               <span style="color:var(--status-green);">✔</span>
               <span><strong>Write-Ahead Logging (WAL):</strong> Immune to sudden app kills or battery cutoffs.</span>
+            </li>
+            <li style="display:flex; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
+              <span style="color:var(--status-green);">✔</span>
+              <span><strong>App Lock:</strong> Protect the app with a PIN and optional fingerprint or face unlock.</span>
             </li>
             <li style="display:flex; gap:10px; font-size:0.9rem; color:var(--text-secondary);">
               <span style="color:var(--status-green);">✔</span>
